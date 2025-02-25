@@ -1,0 +1,21 @@
+{
+	"name": "@tycrek/log",
+	"license": "ISC",
+	"version": "0.0.0",
+	"exports": "./src/Log.ts",
+	"fmt": {
+		"indentWidth": 4,
+		"lineWidth": 140,
+		"useTabs": true,
+		"semiColons": true,
+		"singleQuote": true,
+		"exclude": [
+			"README.md"
+		]
+	},
+	"exclude": [
+		".gitignore",
+		".vscode/"
+	],
+	"lock": false
+}
