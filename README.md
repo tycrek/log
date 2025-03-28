@@ -8,21 +8,23 @@
 
 </div>
 
-# Installation
+[JSR badge]: https://jsr.io/badges/@tycrek/log
+[JSR link]: https://jsr.io/@tycrek/log
+
+## Installation
 
 ```bash
-# Deno
-
+# with Deno
 deno install jsr:@tycrek/log
 
-# Bun
+# with Bun
 bunx jsr install @tycrek/log
 
-# Node
+# with Node
 npx jsr install @tycrek/log
 ```
 
-# Usage
+## Usage
 
 ```ts
 import Log from '@tycrek/log';
@@ -36,7 +38,3 @@ log.warn('not good...')
 log.error('REALLY BAD')
 
 ```
-
-[JSR badge]: https://jsr.io/badges/@tycrek/log
-[JSR link]: https://jsr.io/@tycrek/log
-
