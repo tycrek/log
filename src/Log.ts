@@ -1,4 +1,6 @@
-// CLI colours
+/**
+ * CLI colours. These are exported for your reference.
+ */
 export const CLI_COLOURS = {
 	green: '\x1b[32m',
 	turquoise: '\x1b[36m',
@@ -9,6 +11,9 @@ export const CLI_COLOURS = {
 	RESET: '\x1b[0m',
 };
 
+/**
+ * A logging tool
+ */
 export default class Log {
 	private prefix: string;
 	private enabled: boolean = true;
@@ -27,22 +32,42 @@ export default class Log {
 		this.enabled = enabled;
 	}
 
+	/**
+	 * A debug message
+	 * @param message Print this to console
+	 */
 	debug(message: string) {
 		this.log(console.log, `${CLI_COLOURS.grey}${message}`);
 	}
 
+	/**
+	 * An info message
+	 * @param message Print this to console
+	 */
 	info(message: string) {
 		this.log(console.info, `${CLI_COLOURS.blue}${message}`);
 	}
 
+	/**
+	 * A success message
+	 * @param message Print this to console
+	 */
 	success(message: string) {
 		this.log(console.info, `${CLI_COLOURS.green}${message}`);
 	}
 
+	/**
+	 * An error message
+	 * @param message Print this to console
+	 */
 	error(message: string) {
 		this.log(console.error, `${CLI_COLOURS.red}${message}`);
 	}
 
+	/**
+	 * A warning message
+	 * @param message Print this to console
+	 */
 	warn(message: string) {
 		this.log(console.warn, `${CLI_COLOURS.yellow}${message}`);
 	}
