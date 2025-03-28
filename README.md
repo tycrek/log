@@ -4,9 +4,38 @@
 
 [![JSR badge]][JSR link]
 
-*my personal Deno logging tool*
+*my personal logging tool for Deno, Bun, and Node*
 
 </div>
+
+# Installation
+
+```bash
+# Deno
+
+deno install jsr:@tycrek/log
+
+# Bun
+bunx jsr install @tycrek/log
+
+# Node
+npx jsr install @tycrek/log
+```
+
+# Usage
+
+```ts
+import Log from '@tycrek/log';
+
+const log = new Log({ prefix: 'my-app' })
+
+log.debug('for the devs')
+log.info('useful.')
+log.success('amazing!!')
+log.warn('not good...')
+log.error('REALLY BAD')
+
+```
 
 [JSR badge]: https://jsr.io/badges/@tycrek/log
 [JSR link]: https://jsr.io/@tycrek/log
