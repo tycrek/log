@@ -37,4 +37,7 @@ log.success('amazing!!')
 log.warn('not good...')
 log.error('REALLY BAD')
 
+// other options
+const log = new Log({ prefix: 'my-app', showTimestamps: true, separator: '|' })
+
 ```
