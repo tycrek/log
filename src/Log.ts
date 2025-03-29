@@ -16,16 +16,28 @@ export const CLI_COLOURS = {
  */
 export default class Log {
 	private prefix: string;
+	private showTimestamps: boolean;
+	private separator: string;
 	private enabled: boolean = true;
 
-	constructor(options: { prefix?: string }) {
-		this.prefix = options.prefix ?? '';
+	constructor(options: { prefix?: string, showTimestamps?: boolean, separator?: string }) {
+		this.prefix = options.prefix ?? ''
+		this.showTimestamps = options.showTimestamps ?? false
+		this.separator = options.separator ?? ''
 	}
 
 	// deno-lint-ignore no-explicit-any
 	private log(func: (...data: any[]) => void, message: string) {
 		if (!this.enabled) return;
-		func(`${CLI_COLOURS.grey}${this.prefix}${CLI_COLOURS.RESET} ${message}${CLI_COLOURS.RESET}`);
+
+		const metadata = {
+			prefix: this.prefix.length == 0 ? '' : `${this.prefix} `,
+			timestamp: this.showTimestamps ? `${new Date(Date.now()).toISOString()}` : '',
+			separator: this.separator.length == 0 ? ' ' : ` ${this.separator} `,
+		}
+		const metastring = `${CLI_COLOURS.grey}${metadata.prefix}${metadata.timestamp}${metadata.separator}${CLI_COLOURS.RESET}`;
+
+		func(`${metastring}${message}${CLI_COLOURS.RESET}`);
 	}
 
 	setEnabled(enabled: boolean) {
